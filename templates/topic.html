@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>{{ topic.title }} - 惠心小助</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="topic-top-panel">
+        <div class="top-bar">
+          <a class="back-button" href="{{ url_for('index') }}" aria-label="返回首页"></a>
+          <span class="status-pill">政策专题</span>
+        </div>
+
+        <div class="topic-hero">
+          <span class="service-icon {{ topic.icon }}"></span>
+          <div>
+            <p>{{ topic.eyebrow }}</p>
+            <h1>{{ topic.title }}</h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="topic-panel">
+        <p class="topic-summary">{{ topic.summary }}</p>
+
+        <div class="module-card">
+          <h2>你需要知道</h2>
+          <ul>
+            {% for point in topic.points %}
+              <li>{{ point }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="module-card">
+          <h2>推荐咨询问题</h2>
+          <div class="module-question-list">
+            {% for question in topic.questions %}
+              <a class="module-question" href="{{ url_for('index') }}?ask={{ question | urlencode }}#chat">{{ question }}</a>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="topic-actions">
+          <a class="module-ask-button" href="{{ url_for('index') }}#chat">进入在线问答</a>
+          <a class="secondary-link" href="{{ url_for('index') }}">返回首页</a>
+        </div>
+      </section>
+
+      <footer class="notice-panel">
+        <p>温馨提示：本页面仅作为政策宣传和咨询辅助，不代替官方资格认定。具体办理要求以当地学生资助管理中心、国家开发银行学生在线系统及学校最新通知为准。</p>
+      </footer>
+    </main>
+  </body>
+</html>
