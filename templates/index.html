@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>惠心小助 AI资助政策问答助手</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="top-panel" aria-labelledby="page-title">
+        <div class="top-bar">
+          <span class="back-mark" aria-hidden="true"></span>
+          <span class="status-pill">政策咨询助手</span>
+        </div>
+
+        <div class="hero-content">
+          <div class="assistant-figure" aria-hidden="true">
+            <div class="assistant-head">
+              <span class="hair"></span>
+              <span class="face"></span>
+              <span class="headset left"></span>
+              <span class="headset right"></span>
+            </div>
+            <div class="assistant-body">
+              <span class="collar"></span>
+              <span class="badge">惠</span>
+            </div>
+          </div>
+
+          <div class="hero-copy">
+            <p class="school-name">惠州学院 · 惠心筑梦实践队</p>
+            <h1 id="page-title">惠心小助</h1>
+            <p class="subtitle">AI资助政策问答助手</p>
+            <p class="slogan">国家资助伴你成长，助学贷款助力成才</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="service-panel" aria-label="常用政策服务">
+        <div class="welcome-row">
+          <div class="mini-avatar" aria-hidden="true">惠</div>
+          <div>
+            <h2>您好，惠心小助为您服务</h2>
+            <p>本助手可解答国家资助政策、生源地信用助学贷款、绿色通道、国家助学金、勤工助学、诚信还款等常见问题。</p>
+          </div>
+        </div>
+
+        <div class="service-grid">
+          <button type="button" class="service-button quick-question" data-question="考上大学但暂时交不起学费怎么办？">
+            <span class="service-icon shield"></span>
+            <span>入学资助</span>
+          </button>
+          <button type="button" class="service-button quick-question" data-question="生源地信用助学贷款在哪里申请？">
+            <span class="service-icon loan"></span>
+            <span>助学贷款</span>
+          </button>
+          <button type="button" class="service-button quick-question" data-question="什么是绿色通道？">
+            <span class="service-icon route"></span>
+            <span>绿色通道</span>
+          </button>
+          <button type="button" class="service-button quick-question" data-question="国家助学金和奖学金有什么区别？">
+            <span class="service-icon grant"></span>
+            <span>奖助学金</span>
+          </button>
+          <button type="button" class="service-button quick-question" data-question="贷款什么时候开始还？">
+            <span class="service-icon repay"></span>
+            <span>诚信还款</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="question-panel" aria-label="推荐问题">
+        <div class="tabs" role="tablist" aria-label="问题分类">
+          <button type="button" class="tab active" data-tab="loan">查贷款</button>
+          <button type="button" class="tab" data-tab="aid">查资助</button>
+          <button type="button" class="tab" data-tab="parent">家长问</button>
+          <button type="button" class="tab" data-tab="repay">查还款</button>
+        </div>
+
+        <div class="question-list active" data-panel="loan">
+          <button type="button" class="question-item quick-question">助学贷款是不是高利贷？</button>
+          <button type="button" class="question-item quick-question">生源地信用助学贷款在哪里申请？</button>
+          <button type="button" class="question-item quick-question">首次申请助学贷款需要准备什么材料？</button>
+          <button type="button" class="question-item quick-question">共同借款人必须是父母吗？</button>
+        </div>
+
+        <div class="question-list" data-panel="aid">
+          <button type="button" class="question-item quick-question">考上大学但暂时交不起学费怎么办？</button>
+          <button type="button" class="question-item quick-question">什么是绿色通道？</button>
+          <button type="button" class="question-item quick-question">国家助学金和奖学金有什么区别？</button>
+          <button type="button" class="question-item quick-question">申请资助一定会成功吗？</button>
+        </div>
+
+        <div class="question-list" data-panel="parent">
+          <button type="button" class="question-item quick-question">家长不会操作申请系统怎么办？</button>
+          <button type="button" class="question-item quick-question">申请资助会不会丢人？</button>
+          <button type="button" class="question-item quick-question">申请资助会不会影响征信？</button>
+          <button type="button" class="question-item quick-question">家庭经济困难认定一般怎么了解？</button>
+        </div>
+
+        <div class="question-list" data-panel="repay">
+          <button type="button" class="question-item quick-question">贷款什么时候开始还？</button>
+          <button type="button" class="question-item quick-question">毕业后忘记还款怎么办？</button>
+          <button type="button" class="question-item quick-question">提前还款应该注意什么？</button>
+          <button type="button" class="question-item quick-question">诚信还款为什么重要？</button>
+        </div>
+      </section>
+
+      <section class="chat-panel" aria-label="聊天问答">
+        <div class="chat-header">
+          <div>
+            <h2>在线问答</h2>
+            <p>回答可点击“朗读”，适合现场宣传和家长咨询。</p>
+          </div>
+          <button id="stopReadButton" type="button" class="soft-action">停止朗读</button>
+        </div>
+
+        <div id="chatMessages" class="chat-messages" aria-live="polite">
+          <div class="message-row ai">
+            <div class="bubble-card">
+              <div class="message-bubble">你好，我是惠心小助。你可以问我助学贷款、绿色通道、国家助学金、勤工助学等问题。</div>
+              <button type="button" class="read-button">朗读</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="notice-panel">
+        <p>温馨提示：本助手仅作为政策宣传和咨询辅助工具，不代替官方资格认定。具体办理要求以当地学生资助管理中心、国家开发银行学生在线系统及学校最新通知为准。请勿输入身份证号、银行卡号、手机号、家庭详细住址等敏感信息。</p>
+        <strong>扫码访问惠心小助，随时了解资助政策。</strong>
+      </footer>
+    </main>
+
+    <form id="chatForm" class="bottom-composer">
+      <button id="voiceReadToggle" class="round-button" type="button" aria-pressed="false" title="自动朗读回答">
+        <span aria-hidden="true"></span>
+      </button>
+      <input
+        id="messageInput"
+        type="text"
+        maxlength="600"
+        autocomplete="off"
+        placeholder="请输入要咨询的问题"
+        aria-label="请输入要咨询的问题"
+      >
+      <button id="sendButton" class="send-button" type="submit">发送</button>
+    </form>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>
