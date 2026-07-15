@@ -1,10 +1,18 @@
 import os
 import re
+import base64
+from io import BytesIO
 from pathlib import Path
 
 from dotenv import load_dotenv
-from flask import Flask, abort, jsonify, render_template, request
+from flask import Flask, abort, jsonify, render_template, request, send_file
 from openai import OpenAI
+
+from services.retrieval_service import get_default_retrieval_service
+from services.tts_service import (
+    UnsupportedTTSLanguage,
+    synthesize_speech,
+)
 
 load_dotenv()
 
@@ -12,6 +20,45 @@ app = Flask(__name__)
 
 BASE_DIR = Path(__file__).resolve().parent
 POLICY_PATH = BASE_DIR / "policy.md"
+
+BRAND_ASSETS = {
+    "original": "images/huimango-original.png",
+    "hero": "images/huimango-hero.png",
+    "avatar": "images/huimango-avatar.png",
+}
+
+HOME_SERVICES = [
+    {
+        "topic_key": "admission",
+        "emoji": "📚",
+        "title": "入学准备",
+        "summary": "入学前先了解资助支持",
+    },
+    {
+        "topic_key": "loan",
+        "emoji": "💰",
+        "title": "助学贷款",
+        "summary": "查看申请与还款提醒",
+    },
+    {
+        "topic_key": "green",
+        "emoji": "🏫",
+        "title": "绿色通道",
+        "summary": "暂时困难也能安心报到",
+    },
+    {
+        "topic_key": "scholarship",
+        "emoji": "🎓",
+        "title": "国家助学金",
+        "summary": "了解奖助项目与认定",
+    },
+    {
+        "target": "questions",
+        "emoji": "❓",
+        "title": "常见问题",
+        "summary": "学生家长关心的问题",
+    },
+]
 
 TOPICS = {
     "admission": {
@@ -132,6 +179,43 @@ API_ERROR_MESSAGE = (
     "暂时无法连接问答服务，请稍后再试。如现场急需咨询，请联系学校老师、"
     "县级学生资助管理中心或现场工作人员。"
 )
+IMAGE_ERROR_MESSAGE = (
+    "暂时无法完成图片解析。请确认图片清晰，或改用文字描述问题。"
+    "如涉及具体办理事项，请咨询学校老师、县级学生资助管理中心或现场工作人员。"
+)
+VISION_NOT_CONFIGURED_MESSAGE = (
+    "图片识别功能尚未配置，请先改用文字提问。管理员如需启用此功能，"
+    "请配置支持图片输入的视觉模型；DeepSeek V4 文本模型不能直接识别图片。"
+)
+MAX_MESSAGE_LENGTH = 500
+MAX_IMAGE_BYTES = 5 * 1024 * 1024
+MAX_TTS_TEXT_LENGTH = 3000
+TTS_ERROR_MESSAGE = "云端朗读暂时不可用，网页将尝试使用设备自带语音。"
+
+
+def request_timeout():
+    try:
+        return max(5.0, float(os.getenv("AI_TIMEOUT_SECONDS", "45")))
+    except ValueError:
+        return 45.0
+
+
+def knowledge_retrieval_enabled():
+    return os.getenv("USE_KNOWLEDGE_RETRIEVAL", "false").strip().lower() in {
+        "1",
+        "true",
+        "yes",
+        "on",
+    }
+
+
+def vision_config():
+    api_key = os.getenv("VISION_API_KEY", "").strip()
+    base_url = os.getenv("VISION_BASE_URL", "").strip()
+    model = os.getenv("VISION_MODEL", "").strip()
+    if not (api_key and base_url and model):
+        return None
+    return {"api_key": api_key, "base_url": base_url, "model": model}
 
 
 def contains_sensitive_info(text):
@@ -172,9 +256,95 @@ def build_user_prompt(message, policy_text):
 {message}"""
 
 
+def build_retrieval_user_prompt(message, retrieval_results):
+    context_blocks = []
+    for index, result in enumerate(retrieval_results, start=1):
+        context_blocks.append(
+            f"【相关知识片段 {index}】\n"
+            f"文档：{result['title']}\n"
+            f"章节：{result['section']}\n"
+            f"内容：\n{result['content']}"
+        )
+    retrieval_context = "\n\n".join(context_blocks)
+
+    return f"""请只根据以下检索到的相关知识片段、安全规则和回答结构回答用户问题。
+
+【检索到的相关知识片段】
+{retrieval_context}
+
+【安全规则】
+- 不要求用户提供身份证号、银行卡号、手机号、家庭详细住址、收入明细等敏感信息。
+- 不承诺用户一定符合条件或一定能办理成功。
+- 涉及具体条件、材料、流程、时间、额度、办理地点时，提醒用户以当地学生资助管理中心、国家开发银行学生在线系统和学校最新通知为准。
+- 如果相关知识片段没有明确依据，请说明不确定，并建议咨询学校老师、县级学生资助管理中心或官方平台。
+- 不编造电话号码、网址、内部渠道、工作人员姓名或信息来源。
+
+【回答结构建议】
+1. 先用一句话直接回答。
+2. 再用 3-6 点解释具体政策、办理思路或注意事项。
+3. 最后加一句官方渠道提醒。
+4. 对学生和家长保持鼓励、温和、易懂。
+
+【用户问题】
+{message}"""
+
+
+def build_retrieval_metadata(retrieval_results):
+    sources = []
+    suggested_questions = []
+    seen_sources = set()
+    seen_questions = set()
+
+    for result in retrieval_results:
+        source = result.get("source") or {}
+        source_item = {
+            "title": source.get("title", ""),
+            "organization": source.get("organization", ""),
+            "url": result.get("url", ""),
+            "updated_at": result.get("updated_at", ""),
+        }
+        source_key = tuple(source_item.values())
+        if source_key not in seen_sources:
+            seen_sources.add(source_key)
+            sources.append(source_item)
+
+        for question in result.get("suggested_questions", []):
+            if question and question not in seen_questions:
+                seen_questions.add(question)
+                suggested_questions.append(question)
+            if len(suggested_questions) >= 3:
+                break
+
+    return sources, suggested_questions[:3]
+
+
+def retrieve_knowledge_safely(message):
+    if not knowledge_retrieval_enabled():
+        return []
+    try:
+        return get_default_retrieval_service().retrieve(message)
+    except Exception:
+        app.logger.exception("Knowledge retrieval failed; falling back to policy.md")
+        return []
+
+
+def chat_payload(answer, *, sources=None, suggested_questions=None):
+    return {
+        "answer": answer,
+        "sources": sources or [],
+        "suggested_questions": suggested_questions or [],
+    }
+
+
 @app.get("/")
 def index():
-    return render_template("index.html", topics=TOPICS)
+    return render_template(
+        "index.html",
+        topics=TOPICS,
+        home_services=HOME_SERVICES,
+        brand_assets=BRAND_ASSETS,
+        vision_enabled=vision_config() is not None,
+    )
 
 
 @app.get("/topic/<topic_key>")
@@ -189,41 +359,163 @@ def topic(topic_key):
 def chat():
     data = request.get_json(silent=True) or {}
     message = str(data.get("message", "")).strip()
+    # Reserved for backwards-compatible API evolution. Memory and audience
+    # personalization are deliberately not implemented in this batch.
+    _audience = data.get("audience", "")
+    _history = data.get("history", [])
 
     if not message:
-        return jsonify({"answer": EMPTY_MESSAGE})
+        return jsonify(chat_payload(EMPTY_MESSAGE))
 
-    if len(message) > 500:
-        return jsonify({"answer": TOO_LONG_MESSAGE})
+    if len(message) > MAX_MESSAGE_LENGTH:
+        return jsonify(chat_payload(TOO_LONG_MESSAGE))
 
     if contains_sensitive_info(message):
-        return jsonify({"answer": PRIVACY_MESSAGE})
+        return jsonify(chat_payload(PRIVACY_MESSAGE))
 
     api_key = os.getenv("DEEPSEEK_API_KEY", "").strip()
     if not api_key:
-        return jsonify({"answer": NO_API_KEY_MESSAGE})
+        return jsonify(chat_payload(NO_API_KEY_MESSAGE))
 
     try:
         client = OpenAI(
             api_key=api_key,
             base_url=os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com"),
+            timeout=request_timeout(),
+            max_retries=1,
         )
         model = os.getenv("DEEPSEEK_MODEL", "deepseek-v4-flash")
-        policy_text = read_policy()
+        retrieval_results = retrieve_knowledge_safely(message)
+        if retrieval_results:
+            user_prompt = build_retrieval_user_prompt(message, retrieval_results)
+            sources, suggested_questions = build_retrieval_metadata(retrieval_results)
+        else:
+            user_prompt = build_user_prompt(message, read_policy())
+            sources, suggested_questions = [], []
 
         response = client.chat.completions.create(
             model=model,
             messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": build_user_prompt(message, policy_text)},
+                {"role": "user", "content": user_prompt},
             ],
             temperature=0.25,
             max_tokens=1200,
+            extra_body={"thinking": {"type": "disabled"}},
         )
-        answer = response.choices[0].message.content.strip()
-        return jsonify({"answer": answer or API_ERROR_MESSAGE})
+        answer = (response.choices[0].message.content or "").strip()
+        return jsonify(
+            chat_payload(
+                answer or API_ERROR_MESSAGE,
+                sources=sources,
+                suggested_questions=suggested_questions,
+            )
+        )
     except Exception:
-        return jsonify({"answer": API_ERROR_MESSAGE})
+        app.logger.exception("DeepSeek chat request failed")
+        return jsonify(chat_payload(API_ERROR_MESSAGE)), 503
+
+
+@app.post("/api/tts")
+def text_to_speech():
+    data = request.get_json(silent=True) or {}
+    text = str(data.get("text", "")).strip()
+    language = str(data.get("language", "zh-CN")).strip()
+
+    if not text:
+        return jsonify({"error": "请输入需要朗读的文字。", "fallback": True}), 400
+    if len(text) > MAX_TTS_TEXT_LENGTH:
+        return jsonify(
+            {
+                "error": f"朗读内容过长，请控制在 {MAX_TTS_TEXT_LENGTH} 字以内。",
+                "fallback": True,
+            }
+        ), 400
+
+    try:
+        audio = synthesize_speech(text, language)
+    except UnsupportedTTSLanguage:
+        return jsonify({"error": "暂不支持该朗读语言。", "fallback": True}), 400
+    except Exception:
+        app.logger.exception("Cloud TTS request failed")
+        return jsonify({"error": TTS_ERROR_MESSAGE, "fallback": True}), 503
+
+    response = send_file(
+        BytesIO(audio),
+        mimetype="audio/mpeg",
+        as_attachment=False,
+        download_name="huimango-speech.mp3",
+        max_age=0,
+    )
+    response.headers["Cache-Control"] = "no-store"
+    response.headers["X-TTS-Provider"] = "edge-tts"
+    return response
+
+
+@app.post("/api/analyze-image")
+def analyze_image():
+    image = request.files.get("image")
+    note = str(request.form.get("message", "")).strip()
+
+    if image is None or not image.filename:
+        return jsonify({"answer": "请先选择一张需要解析的图片。"}), 400
+
+    content_type = image.content_type or ""
+    if content_type not in {"image/jpeg", "image/png", "image/webp"}:
+        return jsonify({"answer": "目前仅支持 JPG、PNG、WebP 格式图片。"}), 400
+
+    image_bytes = image.read()
+    if len(image_bytes) > MAX_IMAGE_BYTES:
+        return jsonify({"answer": "图片过大，请上传 5MB 以内的清晰图片。"}), 400
+
+    if len(note) > MAX_MESSAGE_LENGTH:
+        return jsonify({"answer": TOO_LONG_MESSAGE}), 400
+
+    if contains_sensitive_info(note):
+        return jsonify({"answer": PRIVACY_MESSAGE}), 400
+
+    config = vision_config()
+    if config is None:
+        return jsonify({"answer": VISION_NOT_CONFIGURED_MESSAGE}), 503
+
+    prompt = (
+        "请解析用户上传的图片内容。重点识别图片中与学生资助政策、助学贷款、绿色通道、"
+        "奖助学金、还款、防诈骗或通知材料有关的信息。请先概括图片内容，再指出用户可能需要关注的事项。"
+        "如果图片不清晰或无法判断，请说明原因。不要编造图片里没有出现的电话、地址、网址或办理结论。"
+        "涉及具体办理条件、材料、流程、时间、额度时，提醒以当地学生资助管理中心、国家开发银行学生在线系统和学校最新通知为准。"
+    )
+    if note:
+        prompt += f"\n用户补充说明：{note}"
+
+    try:
+        encoded = base64.b64encode(image_bytes).decode("ascii")
+        data_url = f"data:{content_type};base64,{encoded}"
+        client = OpenAI(
+            api_key=config["api_key"],
+            base_url=config["base_url"],
+            timeout=request_timeout(),
+            max_retries=1,
+        )
+        response = client.chat.completions.create(
+            model=config["model"],
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": prompt},
+                        {"type": "image_url", "image_url": {"url": data_url}},
+                    ],
+                },
+            ],
+            temperature=0.2,
+            max_tokens=1000,
+        )
+        answer = (response.choices[0].message.content or "").strip()
+        return jsonify({"answer": answer or IMAGE_ERROR_MESSAGE})
+    except Exception:
+        app.logger.exception("Vision request failed")
+        return jsonify({"answer": IMAGE_ERROR_MESSAGE}), 503
 
 
 if __name__ == "__main__":

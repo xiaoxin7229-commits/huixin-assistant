@@ -10,5 +10,9 @@ services:
         value: https://api.deepseek.com
       - key: DEEPSEEK_MODEL
         value: deepseek-v4-flash
+      - key: AI_TIMEOUT_SECONDS
+        value: "45"
+      - key: USE_KNOWLEDGE_RETRIEVAL
+        value: "false"
       - key: DEEPSEEK_API_KEY
         sync: false
