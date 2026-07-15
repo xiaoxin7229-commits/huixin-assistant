@@ -1,0 +1,1217 @@
+{
+  "version": "1.2",
+  "updated_at": "2026-07-15",
+  "documents": [
+    {
+      "id": "shared-assistant-boundary",
+      "title": "惠芒go服务边界",
+      "file": "shared/assistant-boundary.md",
+      "domain": "shared",
+      "audiences": [
+        "student",
+        "parent",
+        "rural-youth",
+        "farmer",
+        "villager"
+      ],
+      "region": "全国",
+      "keywords": [
+        "服务边界",
+        "资格认定",
+        "官方审核",
+        "免责声明"
+      ],
+      "source_title": "惠心小助资助政策知识库中的项目内部回答规则",
+      "source_organization": "惠心筑梦实践队",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-14",
+      "reviewed_at": "",
+      "status": "draft",
+      "risk_level": "verify-officially",
+      "suggested_questions": [
+        "这个助手可以代替学校审核吗？",
+        "政策信息应该去哪里核实？"
+      ]
+    },
+    {
+      "id": "shared-privacy-and-safety",
+      "title": "隐私保护与咨询安全",
+      "file": "shared/privacy-and-safety.md",
+      "domain": "shared",
+      "audiences": [
+        "student",
+        "parent",
+        "rural-youth",
+        "farmer",
+        "villager"
+      ],
+      "region": "全国",
+      "keywords": [
+        "隐私",
+        "身份证",
+        "银行卡",
+        "验证码",
+        "诈骗"
+      ],
+      "source_title": "惠心小助资助政策知识库中的隐私与安全规则",
+      "source_organization": "惠心筑梦实践队",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-14",
+      "reviewed_at": "",
+      "status": "draft",
+      "risk_level": "high",
+      "suggested_questions": [
+        "咨询时哪些信息不能发送？",
+        "怎样识别资助诈骗？"
+      ]
+    },
+    {
+      "id": "shared-official-channels",
+      "title": "学生资助官方核实渠道",
+      "file": "shared/official-channels.md",
+      "domain": "shared",
+      "audiences": [
+        "student",
+        "parent",
+        "rural-youth",
+        "farmer",
+        "villager"
+      ],
+      "region": "全国及广东省",
+      "keywords": [
+        "官方渠道",
+        "资助中心",
+        "国家开发银行",
+        "广东省教育厅"
+      ],
+      "source_title": "全国学生资助管理中心官网",
+      "source_organization": "全国学生资助管理中心",
+      "source_url": "https://www.xszz.edu.cn/",
+      "source_date": "",
+      "updated_at": "2026-07-14",
+      "reviewed_at": "2026-07-14",
+      "status": "published",
+      "risk_level": "verify-officially",
+      "suggested_questions": [
+        "助学贷款官方系统在哪里？",
+        "本地办理地点应该怎么查询？"
+      ]
+    },
+    {
+      "id": "student-aid-overview",
+      "title": "国家学生资助体系概览",
+      "file": "student-aid/overview.md",
+      "domain": "student-aid",
+      "audiences": [
+        "student",
+        "parent",
+        "rural-youth",
+        "farmer",
+        "villager"
+      ],
+      "region": "全国",
+      "keywords": [
+        "国家资助",
+        "资助体系",
+        "教育阶段",
+        "奖助学金",
+        "助学贷款"
+      ],
+      "source_title": "全国学生资助管理中心政策简介等栏目",
+      "source_organization": "全国学生资助管理中心",
+      "source_url": "https://www.xszz.edu.cn/",
+      "source_date": "",
+      "updated_at": "2026-07-14",
+      "reviewed_at": "2026-07-14",
+      "status": "published",
+      "risk_level": "verify-officially",
+      "suggested_questions": [
+        "不同教育阶段有哪些资助？",
+        "我不知道适合哪类资助怎么办？"
+      ]
+    },
+    {
+      "id": "student-aid-scholarships-and-grants",
+      "title": "国家奖学金、励志奖学金与助学金",
+      "file": "student-aid/scholarships-and-grants.md",
+      "domain": "student-aid",
+      "audiences": [
+        "student",
+        "parent",
+        "rural-youth"
+      ],
+      "region": "全国",
+      "keywords": [
+        "国家奖学金",
+        "励志奖学金",
+        "国家助学金",
+        "奖励标准",
+        "困难学生"
+      ],
+      "source_title": "全国学生资助管理中心政策简介等栏目",
+      "source_organization": "全国学生资助管理中心",
+      "source_url": "https://www.xszz.edu.cn/",
+      "source_date": "",
+      "updated_at": "2026-07-14",
+      "reviewed_at": "2026-07-14",
+      "status": "published",
+      "risk_level": "verify-officially",
+      "suggested_questions": [
+        "国家助学金和奖学金有什么区别？",
+        "申请国家助学金需要什么条件？",
+        "国家励志奖学金是什么？"
+      ]
+    },
+    {
+      "id": "student-aid-student-loans",
+      "title": "国家助学贷款与生源地信用助学贷款",
+      "file": "student-aid/student-loans.md",
+      "domain": "student-aid",
+      "audiences": [
+        "student",
+        "parent",
+        "rural-youth"
+      ],
+      "region": "全国",
+      "keywords": [
+        "国家助学贷款",
+        "生源地贷款",
+        "校园地贷款",
+        "共同借款人",
+        "续贷",
+        "材料"
+      ],
+      "source_title": "全国学生资助管理中心政策简介等栏目",
+      "source_organization": "全国学生资助管理中心",
+      "source_url": "https://www.xszz.edu.cn/",
+      "source_date": "",
+      "updated_at": "2026-07-14",
+      "reviewed_at": "2026-07-14",
+      "status": "published",
+      "risk_level": "high",
+      "suggested_questions": [
+        "助学贷款是不是高利贷？",
+        "首次申请助学贷款需要准备什么？",
+        "生源地贷款在哪里申请？"
+      ]
+    },
+    {
+      "id": "student-aid-green-channel",
+      "title": "家庭经济困难新生绿色通道",
+      "file": "student-aid/green-channel.md",
+      "domain": "student-aid",
+      "audiences": [
+        "student",
+        "parent",
+        "rural-youth"
+      ],
+      "region": "全国",
+      "keywords": [
+        "绿色通道",
+        "新生报到",
+        "交不起学费",
+        "先入学",
+        "困难新生"
+      ],
+      "source_title": "全国学生资助管理中心政策简介等栏目",
+      "source_organization": "全国学生资助管理中心",
+      "source_url": "https://www.xszz.edu.cn/",
+      "source_date": "",
+      "updated_at": "2026-07-14",
+      "reviewed_at": "2026-07-14",
+      "status": "published",
+      "risk_level": "verify-officially",
+      "suggested_questions": [
+        "什么是绿色通道？",
+        "绿色通道是不是不用交学费？",
+        "报到时交不起学费怎么办？"
+      ]
+    },
+    {
+      "id": "student-aid-hardship-assessment",
+      "title": "家庭经济困难认定",
+      "file": "student-aid/hardship-assessment.md",
+      "domain": "student-aid",
+      "audiences": [
+        "student",
+        "parent",
+        "rural-youth"
+      ],
+      "region": "全国",
+      "keywords": [
+        "家庭经济困难认定",
+        "困难认定",
+        "申请表",
+        "个人承诺",
+        "临时困难"
+      ],
+      "source_title": "全国学生资助管理中心政策简介等栏目",
+      "source_organization": "全国学生资助管理中心",
+      "source_url": "https://www.xszz.edu.cn/",
+      "source_date": "",
+      "updated_at": "2026-07-14",
+      "reviewed_at": "2026-07-14",
+      "status": "published",
+      "risk_level": "verify-officially",
+      "suggested_questions": [
+        "家庭经济困难认定一般怎么了解？",
+        "申请认定需要盖章吗？",
+        "家庭情况变化后怎么办？"
+      ]
+    },
+    {
+      "id": "student-aid-repayment-and-credit",
+      "title": "助学贷款还款、征信与防诈骗",
+      "file": "student-aid/repayment-and-credit.md",
+      "domain": "student-aid",
+      "audiences": [
+        "student",
+        "parent",
+        "rural-youth"
+      ],
+      "region": "全国",
+      "keywords": [
+        "还款",
+        "提前还款",
+        "逾期",
+        "征信",
+        "诚信",
+        "诈骗"
+      ],
+      "source_title": "全国学生资助管理中心政策简介等栏目",
+      "source_organization": "全国学生资助管理中心",
+      "source_url": "https://www.xszz.edu.cn/",
+      "source_date": "",
+      "updated_at": "2026-07-14",
+      "reviewed_at": "2026-07-14",
+      "status": "published",
+      "risk_level": "high",
+      "suggested_questions": [
+        "贷款什么时候开始还？",
+        "毕业后忘记还款怎么办？",
+        "提前还款应该注意什么？"
+      ]
+    },
+    {
+      "id": "agriculture-agricultural-market-system",
+      "title": "农产品“12221”市场体系入门（PDF迁移）",
+      "file": "agriculture/agricultural-market-system.md",
+      "domain": "agriculture",
+      "audiences": [
+        "rural-youth",
+        "farmer",
+        "villager"
+      ],
+      "region": "广东省/惠州市",
+      "keywords": [
+        "12221",
+        "农产品市场",
+        "产区",
+        "销区",
+        "采购商",
+        "品牌"
+      ],
+      "source_title": "助农知识库.pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "published",
+      "risk_level": "verify-officially",
+      "suggested_questions": [
+        "农产品“12221”市场体系入门需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "agriculture-compliant-agricultural-marketing",
+      "title": "助农营销合规与信任建设（PDF迁移）",
+      "file": "agriculture/compliant-agricultural-marketing.md",
+      "domain": "agriculture",
+      "audiences": [
+        "rural-youth",
+        "farmer",
+        "villager"
+      ],
+      "region": "广东省/惠州市",
+      "keywords": [
+        "助农合规",
+        "虚假宣传",
+        "广告法",
+        "质量证明",
+        "产地证明",
+        "消费者信任"
+      ],
+      "source_title": "助农知识库.pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "published",
+      "risk_level": "high",
+      "suggested_questions": [
+        "助农营销合规与信任建设需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "agriculture-digital-marketing-content",
+      "title": "农产品短视频与直播内容准备（PDF迁移）",
+      "file": "agriculture/digital-marketing-content.md",
+      "domain": "agriculture",
+      "audiences": [
+        "rural-youth",
+        "farmer"
+      ],
+      "region": "广东省/惠州市",
+      "keywords": [
+        "农产品营销",
+        "短视频",
+        "直播",
+        "内容创作",
+        "产地溯源"
+      ],
+      "source_title": "助农知识库.pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "published",
+      "risk_level": "verify-officially",
+      "suggested_questions": [
+        "农产品短视频与直播内容准备需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "agriculture-order-and-cold-chain",
+      "title": "农产品订单、包装与冷链衔接（PDF迁移）",
+      "file": "agriculture/order-and-cold-chain.md",
+      "domain": "agriculture",
+      "audiences": [
+        "rural-youth",
+        "farmer"
+      ],
+      "region": "广东省/惠州市",
+      "keywords": [
+        "农产品订单",
+        "包装",
+        "冷链",
+        "物流",
+        "供应链",
+        "售后"
+      ],
+      "source_title": "助农知识库.pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "published",
+      "risk_level": "verify-officially",
+      "suggested_questions": [
+        "农产品订单、包装与冷链衔接需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "community-community-service-access",
+      "title": "社区服务事项查询与线下求助（PDF迁移）",
+      "file": "community/community-service-access.md",
+      "domain": "community",
+      "audiences": [
+        "parent",
+        "rural-youth",
+        "farmer",
+        "villager"
+      ],
+      "region": "全国",
+      "keywords": [
+        "社区服务",
+        "政务办理",
+        "一站式服务",
+        "线下窗口",
+        "便民服务"
+      ],
+      "source_title": "社区服务知识库.pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "published",
+      "risk_level": "verify-officially",
+      "suggested_questions": [
+        "社区服务事项查询与线下求助需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "community-embedded-childcare-consultation",
+      "title": "社区嵌入式托育服务咨询（PDF迁移草稿）",
+      "file": "community/embedded-childcare-consultation.md",
+      "domain": "community",
+      "audiences": [
+        "parent",
+        "rural-youth",
+        "villager"
+      ],
+      "region": "全国",
+      "keywords": [
+        "社区托育",
+        "嵌入式服务",
+        "婴幼儿照护",
+        "机构资质",
+        "消防安全"
+      ],
+      "source_title": "社区服务知识库.pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "draft",
+      "risk_level": "high",
+      "suggested_questions": [
+        "社区嵌入式托育服务咨询需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "community-smart-community-privacy",
+      "title": "智慧社区服务与个人信息保护（PDF迁移）",
+      "file": "community/smart-community-privacy.md",
+      "domain": "community",
+      "audiences": [
+        "parent",
+        "rural-youth",
+        "farmer",
+        "villager"
+      ],
+      "region": "全国",
+      "keywords": [
+        "智慧社区",
+        "门禁",
+        "视频监控",
+        "人脸识别",
+        "个人信息",
+        "隐私"
+      ],
+      "source_title": "社区服务知识库.pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "published",
+      "risk_level": "high",
+      "suggested_questions": [
+        "智慧社区服务与个人信息保护需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "community-volunteer-registration-and-safety",
+      "title": "社区志愿者报名与安全保障（PDF迁移）",
+      "file": "community/volunteer-registration-and-safety.md",
+      "domain": "community",
+      "audiences": [
+        "student",
+        "rural-youth",
+        "villager"
+      ],
+      "region": "全国",
+      "keywords": [
+        "志愿服务",
+        "志愿者注册",
+        "个人信息",
+        "无偿服务",
+        "保险",
+        "安全"
+      ],
+      "source_title": "社区服务知识库.pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "published",
+      "risk_level": "high",
+      "suggested_questions": [
+        "社区志愿者报名与安全保障需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "local-huidong-land-and-heritage",
+      "title": "惠东土地整治与文化遗产保护咨询（PDF迁移草稿）",
+      "file": "local/huidong-land-and-heritage.md",
+      "domain": "local",
+      "audiences": [
+        "rural-youth",
+        "farmer",
+        "villager"
+      ],
+      "region": "广东省惠州市惠东县",
+      "keywords": [
+        "惠东",
+        "土地整治",
+        "海丝遗产",
+        "白马窑",
+        "文物保护",
+        "项目咨询"
+      ],
+      "source_title": "惠州本地知识库.pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "draft",
+      "risk_level": "high",
+      "suggested_questions": [
+        "惠东土地整治与文化遗产保护咨询需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "local-huidong-lychee-industry",
+      "title": "惠东荔枝产业与产销服务（PDF迁移草稿）",
+      "file": "local/huidong-lychee-industry.md",
+      "domain": "local",
+      "audiences": [
+        "rural-youth",
+        "farmer",
+        "villager"
+      ],
+      "region": "广东省惠州市惠东县",
+      "keywords": [
+        "惠东荔枝",
+        "产业带",
+        "产销对接",
+        "冷链物流",
+        "文旅"
+      ],
+      "source_title": "惠州本地知识库.pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "draft",
+      "risk_level": "verify-officially",
+      "suggested_questions": [
+        "惠东荔枝产业与产销服务需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "local-huizhou-hardship-assessment",
+      "title": "惠州学生家庭经济困难认定（PDF迁移草稿）",
+      "file": "local/huizhou-hardship-assessment.md",
+      "domain": "local",
+      "audiences": [
+        "student",
+        "parent",
+        "rural-youth"
+      ],
+      "region": "广东省惠州市",
+      "keywords": [
+        "惠州",
+        "困难认定",
+        "学生资助",
+        "申请",
+        "隐私"
+      ],
+      "source_title": "惠州本地知识库.pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "draft",
+      "risk_level": "high",
+      "suggested_questions": [
+        "惠州学生家庭经济困难认定需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "local-huizhou-student-loan",
+      "title": "惠州生源地信用助学贷款办理（PDF迁移草稿）",
+      "file": "local/huizhou-student-loan.md",
+      "domain": "local",
+      "audiences": [
+        "student",
+        "parent",
+        "rural-youth"
+      ],
+      "region": "广东省惠州市",
+      "keywords": [
+        "惠州",
+        "生源地助学贷款",
+        "首贷",
+        "续贷",
+        "县级资助中心"
+      ],
+      "source_title": "惠州本地知识库.pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "draft",
+      "risk_level": "high",
+      "suggested_questions": [
+        "惠州生源地信用助学贷款办理需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "local-huizhou-vocational-college-grant",
+      "title": "惠州经济职业技术学院校内新生资助（PDF迁移草稿）",
+      "file": "local/huizhou-vocational-college-grant.md",
+      "domain": "local",
+      "audiences": [
+        "student",
+        "parent"
+      ],
+      "region": "广东省惠州市",
+      "keywords": [
+        "惠州经济职业技术学院",
+        "校内资助",
+        "新生",
+        "申请时间",
+        "困难学生"
+      ],
+      "source_title": "惠州本地知识库.pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "draft",
+      "risk_level": "high",
+      "suggested_questions": [
+        "惠州经济职业技术学院校内新生资助需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "student-aid-green-channel-enrollment-reference",
+      "title": "新生绿色通道办理（PDF迁移草稿）",
+      "file": "student-aid/green-channel-enrollment-reference.md",
+      "domain": "student-aid",
+      "audiences": [
+        "student",
+        "parent",
+        "rural-youth"
+      ],
+      "region": "全国",
+      "keywords": [
+        "绿色通道",
+        "新生报到",
+        "学费困难",
+        "先入学",
+        "资助衔接"
+      ],
+      "source_title": "国家资助政策知识库.pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "draft",
+      "risk_level": "verify-officially",
+      "suggested_questions": [
+        "新生绿色通道办理需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "student-aid-hong-kong-student-finance-reference",
+      "title": "香港专上学生资助与贷款辨别（PDF迁移草稿）",
+      "file": "student-aid/hong-kong-student-finance-reference.md",
+      "domain": "student-aid",
+      "audiences": [
+        "student",
+        "parent"
+      ],
+      "region": "中国香港",
+      "keywords": [
+        "香港学生资助",
+        "专上课程",
+        "TSFS",
+        "FASP",
+        "贷款",
+        "入息审查"
+      ],
+      "source_title": "国家资助政策知识库.pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "draft",
+      "risk_level": "high",
+      "suggested_questions": [
+        "香港专上学生资助与贷款辨别需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "student-aid-military-service-aid-reference",
+      "title": "服兵役高校学生资助（PDF迁移草稿）",
+      "file": "student-aid/military-service-aid-reference.md",
+      "domain": "student-aid",
+      "audiences": [
+        "student",
+        "parent",
+        "rural-youth"
+      ],
+      "region": "全国",
+      "keywords": [
+        "服兵役资助",
+        "应征入伍",
+        "学费补偿",
+        "贷款代偿",
+        "退役复学"
+      ],
+      "source_title": "国家资助政策知识库.pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "draft",
+      "risk_level": "high",
+      "suggested_questions": [
+        "服兵役高校学生资助需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "student-aid-national-awards-and-grants-reference",
+      "title": "国家奖助学金申请要点（PDF迁移草稿）",
+      "file": "student-aid/national-awards-and-grants-reference.md",
+      "domain": "student-aid",
+      "audiences": [
+        "student",
+        "parent",
+        "rural-youth"
+      ],
+      "region": "全国",
+      "keywords": [
+        "国家奖学金",
+        "国家励志奖学金",
+        "国家助学金",
+        "申请条件",
+        "评审"
+      ],
+      "source_title": "国家资助政策知识库.pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "draft",
+      "risk_level": "verify-officially",
+      "suggested_questions": [
+        "国家奖助学金申请要点需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "student-aid-student-loan-application-reference",
+      "title": "国家助学贷款申请与续贷（PDF迁移草稿）",
+      "file": "student-aid/student-loan-application-reference.md",
+      "domain": "student-aid",
+      "audiences": [
+        "student",
+        "parent",
+        "rural-youth"
+      ],
+      "region": "全国",
+      "keywords": [
+        "国家助学贷款",
+        "生源地贷款",
+        "首贷",
+        "续贷",
+        "共同借款人"
+      ],
+      "source_title": "国家资助政策知识库.pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "draft",
+      "risk_level": "high",
+      "suggested_questions": [
+        "国家助学贷款申请与续贷需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "youth-graduation-registration-and-files",
+      "title": "高校毕业去向登记与档案转递（PDF迁移）",
+      "file": "youth/graduation-registration-and-files.md",
+      "domain": "youth",
+      "audiences": [
+        "student",
+        "rural-youth"
+      ],
+      "region": "全国",
+      "keywords": [
+        "毕业去向登记",
+        "学生档案",
+        "档案转递",
+        "就业报到",
+        "公共就业机构"
+      ],
+      "source_title": "青年成长知识库 .pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "published",
+      "risk_level": "high",
+      "suggested_questions": [
+        "高校毕业去向登记与档案转递需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "youth-public-employment-services",
+      "title": "离校未就业青年公共就业服务（PDF迁移）",
+      "file": "youth/public-employment-services.md",
+      "domain": "youth",
+      "audiences": [
+        "student",
+        "rural-youth"
+      ],
+      "region": "全国",
+      "keywords": [
+        "离校未就业",
+        "公共就业服务",
+        "职业指导",
+        "岗位推荐",
+        "技能培训"
+      ],
+      "source_title": "青年成长知识库 .pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "published",
+      "risk_level": "verify-officially",
+      "suggested_questions": [
+        "离校未就业青年公共就业服务需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "youth-safe-job-search",
+      "title": "青年求职渠道与防骗提示（PDF迁移）",
+      "file": "youth/safe-job-search.md",
+      "domain": "youth",
+      "audiences": [
+        "student",
+        "rural-youth"
+      ],
+      "region": "全国",
+      "keywords": [
+        "求职安全",
+        "招聘平台",
+        "黑中介",
+        "押金",
+        "培训贷",
+        "非法传销"
+      ],
+      "source_title": "青年成长知识库 .pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "published",
+      "risk_level": "high",
+      "suggested_questions": [
+        "青年求职渠道与防骗提示需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "youth-startup-support-consultation",
+      "title": "青年创业补贴与担保贷款咨询（PDF迁移草稿）",
+      "file": "youth/startup-support-consultation.md",
+      "domain": "youth",
+      "audiences": [
+        "student",
+        "rural-youth",
+        "farmer"
+      ],
+      "region": "全国",
+      "keywords": [
+        "青年创业",
+        "创业补贴",
+        "创业担保贷款",
+        "贴息",
+        "个体经营",
+        "小微企业"
+      ],
+      "source_title": "青年成长知识库 .pdf",
+      "source_organization": "资料编制方未注明",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "draft",
+      "risk_level": "high",
+      "suggested_questions": [
+        "青年创业补贴与担保贷款咨询需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "agriculture-product-selection-and-positioning",
+      "title": "农产品选品与目标客户定位（PDF迁移）",
+      "file": "agriculture/product-selection-and-positioning.md",
+      "domain": "agriculture",
+      "audiences": [
+        "rural-youth",
+        "farmer"
+      ],
+      "region": "广东省/惠州市",
+      "keywords": [
+        "农产品选品",
+        "客户定位",
+        "返乡创业",
+        "品质",
+        "产量",
+        "上市期"
+      ],
+      "source_title": "助农知识库.pdf",
+      "source_organization": "用户提供资料（编制方未注明）",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "published",
+      "risk_level": "verify-officially",
+      "suggested_questions": [
+        "农产品选品与目标客户定位（PDF迁移）需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "community-elderly-offline-assistance",
+      "title": "老年人社区线下办事协助（PDF迁移）",
+      "file": "community/elderly-offline-assistance.md",
+      "domain": "community",
+      "audiences": [
+        "parent",
+        "villager"
+      ],
+      "region": "全国",
+      "keywords": [
+        "老年人",
+        "线下办理",
+        "人工帮办",
+        "无障碍服务",
+        "社区窗口"
+      ],
+      "source_title": "社区服务知识库.pdf",
+      "source_organization": "用户提供资料（编制方未注明）",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "published",
+      "risk_level": "verify-officially",
+      "suggested_questions": [
+        "老年人社区线下办事协助（PDF迁移）需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "local-official-information-verification",
+      "title": "惠州本地政策与办事信息核验（PDF迁移）",
+      "file": "local/official-information-verification.md",
+      "domain": "local",
+      "audiences": [
+        "student",
+        "parent",
+        "rural-youth",
+        "farmer",
+        "villager"
+      ],
+      "region": "广东省惠州市",
+      "keywords": [
+        "惠州政策",
+        "官方核验",
+        "办事渠道",
+        "政府网站",
+        "学校通知"
+      ],
+      "source_title": "惠州本地知识库.pdf",
+      "source_organization": "用户提供资料（编制方未注明）",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "published",
+      "risk_level": "verify-officially",
+      "suggested_questions": [
+        "惠州本地政策与办事信息核验（PDF迁移）需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "youth-grassroots-employment-consultation",
+      "title": "高校毕业生基层就业政策核验（PDF迁移）",
+      "file": "youth/grassroots-employment-consultation.md",
+      "domain": "youth",
+      "audiences": [
+        "student",
+        "rural-youth"
+      ],
+      "region": "全国",
+      "keywords": [
+        "基层就业",
+        "高校毕业生",
+        "学费补偿",
+        "贷款代偿",
+        "乡村就业",
+        "服务年限"
+      ],
+      "source_title": "青年成长知识库 .pdf",
+      "source_organization": "用户提供资料（编制方未注明）",
+      "source_url": "",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "",
+      "status": "published",
+      "risk_level": "high",
+      "suggested_questions": [
+        "高校毕业生基层就业政策核验（PDF迁移）需要先确认什么？",
+        "应该通过哪些官方渠道核实？"
+      ]
+    },
+    {
+      "id": "student-aid-source-based-student-loans",
+      "title": "生源地信用助学贷款",
+      "file": "student-aid/source-based-student-loans.md",
+      "domain": "student-aid",
+      "audiences": ["student", "parent", "rural-youth"],
+      "region": "全国",
+      "keywords": ["生源地信用助学贷款", "生源地贷款", "共同借款人", "首贷", "续贷", "学生在线系统"],
+      "source_title": "国家开发银行助学贷款学生在线系统；关于调整完善国家助学贷款有关政策的通知",
+      "source_organization": "国家开发银行；财政部、教育部、中国人民银行、金融监管总局",
+      "source_url": "https://www.csls.cdb.com.cn/",
+      "source_date": "2024-10-31",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "2026-07-15",
+      "status": "published",
+      "risk_level": "high",
+      "suggested_questions": ["生源地助学贷款在哪里申请？", "首次申请和续贷有什么区别？", "共同借款人通常需要满足什么要求？"]
+    },
+    {
+      "id": "student-aid-guangdong-student-aid",
+      "title": "广东省学生资助政策体系",
+      "file": "student-aid/guangdong-student-aid.md",
+      "domain": "student-aid",
+      "audiences": ["student", "parent", "rural-youth", "farmer", "villager"],
+      "region": "广东省",
+      "keywords": ["广东学生资助", "广东省教育厅", "广东助学政策", "学前教育", "义务教育", "普通高中", "中等职业教育", "高等教育"],
+      "source_title": "广东省教育厅 广东省财政厅关于进一步健全学生资助政策体系的意见",
+      "source_organization": "广东省教育厅、广东省财政厅",
+      "source_url": "https://edu.gd.gov.cn/zwgknew/jyzcfg/dfjyzcfg/content/post_3379707.html",
+      "source_date": "2020-12-27",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "2026-07-15",
+      "status": "published",
+      "risk_level": "verify-officially",
+      "suggested_questions": ["广东省有哪些学生资助项目？", "广东户籍学生怎样查询适合的资助？", "历史政策金额还能直接使用吗？"]
+    },
+    {
+      "id": "student-aid-application-process",
+      "title": "学生资助申请与办理流程",
+      "file": "student-aid/application-process.md",
+      "domain": "student-aid",
+      "audiences": ["student", "parent", "rural-youth"],
+      "region": "全国",
+      "keywords": ["申请流程", "办理材料", "申请时间", "首贷", "续贷", "资格审核", "学校资助中心", "材料不齐"],
+      "source_title": "惠芒Go 国家资助政策知识库 V1.0；全国学生资助管理中心官网",
+      "source_organization": "惠心筑梦实践队；全国学生资助管理中心",
+      "source_url": "https://www.xszz.edu.cn/",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "2026-07-15",
+      "status": "published",
+      "risk_level": "verify-officially",
+      "suggested_questions": ["申请学生资助一般要经过哪些步骤？", "材料不齐应该怎么办？", "错过申请时间还有办法吗？"]
+    },
+    {
+      "id": "student-aid-terminology",
+      "title": "国家学生资助政策术语解释",
+      "file": "student-aid/terminology.md",
+      "domain": "student-aid",
+      "audiences": ["student", "parent", "rural-youth", "farmer", "villager"],
+      "region": "全国",
+      "keywords": ["政策术语", "助学金和贷款区别", "首贷", "续贷", "共同借款人", "回执", "贴息", "绿色通道"],
+      "source_title": "惠芒Go 国家资助政策知识库 V1.0；全国学生资助管理中心官网",
+      "source_organization": "惠心筑梦实践队；全国学生资助管理中心",
+      "source_url": "https://www.xszz.edu.cn/",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "2026-07-15",
+      "status": "published",
+      "risk_level": "normal",
+      "suggested_questions": ["助学金和助学贷款有什么区别？", "什么是共同借款人？", "绿色通道是不是免学费？"]
+    },
+    {
+      "id": "student-aid-official-contacts",
+      "title": "国家学生资助官方咨询渠道",
+      "file": "student-aid/official-contacts.md",
+      "domain": "student-aid",
+      "audiences": ["student", "parent", "rural-youth", "farmer", "villager"],
+      "region": "全国及广东省",
+      "keywords": ["官方咨询", "95593", "学生在线系统", "全国学生资助管理中心", "广东省教育厅", "学校资助中心", "官方网站"],
+      "source_title": "国家开发银行助学贷款学生在线系统；全国学生资助管理中心官网；广东省教育厅网站",
+      "source_organization": "国家开发银行；全国学生资助管理中心；广东省教育厅",
+      "source_url": "https://www.csls.cdb.com.cn/",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "2026-07-15",
+      "status": "published",
+      "risk_level": "verify-officially",
+      "suggested_questions": ["国家开发银行学生在线系统在哪里？", "助学贷款官方电话是多少？", "怎样核实地方资助电话？"]
+    },
+    {
+      "id": "student-aid-faq",
+      "title": "国家学生资助常见问题100问",
+      "file": "student-aid/faq.md",
+      "domain": "student-aid",
+      "audiences": ["student", "parent", "rural-youth", "farmer", "villager"],
+      "region": "全国及广东省",
+      "keywords": ["常见问题", "学生问题", "家长问题", "高考毕业生", "新生", "助学贷款", "还款", "绿色通道", "广东资助", "防诈骗"],
+      "source_title": "惠芒Go 国家资助政策知识库 V1.0；全国学生资助管理中心官网；国家开发银行助学贷款学生在线系统",
+      "source_organization": "惠心筑梦实践队；全国学生资助管理中心；国家开发银行",
+      "source_url": "https://www.xszz.edu.cn/",
+      "source_date": "",
+      "updated_at": "2026-07-15",
+      "reviewed_at": "2026-07-15",
+      "status": "published",
+      "risk_level": "verify-officially",
+      "suggested_questions": ["家庭经济困难可以申请哪些帮助？", "助学贷款会影响征信吗？", "交不起学费能先报到吗？", "在哪里核实最新政策？"]
+    }
+  ]
+}
